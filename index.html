@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="icon" href="/aerostyleLogo.png">
+    <title>Aerostyle - Electronics Store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Aerostyle</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#cart">Cart (<span id="cart-count">0</span>)</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h1>Welcome to ElectroShop</h1>
+        <p>Your one-stop shop for the latest electronics.</p>
+        <button onclick="scrollToSection('products')">Shop Now</button>
+    </section>
+
+    <section id="featured-products" class="products-section">
+        <h2>Featured Products</h2>
+        <div id="featured-grid" class="product-grid"></div>
+    </section>
+
+    <section id="products" class="products-section">
+        <h2>All Products</h2>
+        <div class="filters">
+            <input type="text" id="search" placeholder="Search by name...">
+            <select id="category-filter">
+                <option value="">All Categories</option>
+                <option value="Phones">Phones</option>
+                <option value="Laptops">Laptops</option>
+                <option value="Accessories">Accessories</option>
+            </select>
+            <select id="price-filter">
+                <option value="">All Prices</option>
+                <option value="0-500">$0 - $500</option>
+                <option value="500-1000">$500 - $1000</option>
+                <option value="1000+">$1000+</option>
+            </select>
+        </div>
+        <div id="product-grid" class="product-grid"></div>
+    </section>
+
+    <section id="cart" class="cart-section">
+        <h2>Your Cart</h2>
+        <div id="cart-items"></div>
+        <div id="cart-total">Total: $0</div>
+        <button id="checkout-btn" onclick="showCheckout()">Checkout</button>
+    </section>
+
+    <section id="checkout" class="checkout-section" style="display: none;">
+        <h2>Checkout</h2>
+        <form id="checkout-form">
+            <input type="text" placeholder="Name" required>
+            <input type="email" placeholder="Email" required>
+            <input type="text" placeholder="Address" required>
+            <input type="text" placeholder="Card Number" required>
+            <input type="text" placeholder="Expiry Date" required>
+            <input type="text" placeholder="CVV" required>
+            <button type="submit">Place Order</button>
+        </form>
+    </section>
+
+    <section id="about" class="about-section">
+        <h2>About Us</h2>
+        <p>We offer the best electronics at affordable prices.</p>
+    </section>
+
+    <div id="product-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modal-details"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
